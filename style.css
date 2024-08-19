@@ -1,0 +1,228 @@
+:root{
+    --background:#F3F5FC;
+    --RGBA:rgba(0,0,0,0.08);
+    --Dark-Blue:#0A3871;
+    --White:#FFFFFF;
+    --White-Blue:#D8DFE8;
+    --Gree:#495057;
+    --Blue-ligth:#6192cf;
+    --Medium-Gray:#67808E;
+    --black: #00000000;
+    --Transparente: var(--Transparente)
+}
+
+body {
+    background-color: var(--background);
+    font-family: "inter", sans-serif;
+}
+main {
+    display: flex;
+    flex-direction: row;
+    min-height: 100vh;
+}
+main .logo {
+    width: 8vw;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding-top: 2em;
+}
+main .logo img {
+    width: 7em;
+}
+main .input_mensaje {
+    width: 60vw;
+    padding-top: 12vh;
+    display: flex;
+    justify-content: center;    
+}
+main .input_mensaje .mensaje_contenedor {
+    width: 70%;
+    
+}
+main .input_mensaje .mensaje_contenedor textarea {
+    width: 100%;
+    resize: none;
+    border: 0;
+    background: var(--Transparente);
+    font-size: 2em;
+    height: 70vh;
+    padding: 0;
+    color: var(--Dark-Blue);
+}
+main .input_mensaje .mensaje_contenedor textarea::placeholder {
+    color: var(--Gree);
+}
+
+main .input_mensaje .mensaje_contenedor textarea:focus {
+    outline: none;    
+}
+
+main .input_mensaje .bottom {
+    display: flex;
+    gap: 1em;
+    flex-direction: column;
+    padding-top: 1em;
+}
+main .resultado_mensaje {
+    width: 30vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;    
+}
+main .resultado_mensaje .resultado {
+    background-color: var(--White);
+    height: 90vh;
+    width: 75%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 2em;
+    box-shadow: 0em 0em 2em 0.1em var(--Gree);    
+}
+.hidden {
+    display: none !important;
+}
+
+main .resultado_mensaje .resultado .mensaje {
+    overflow: auto;
+    margin-top: 2em;      
+}
+main .resultado .no_encontrado {
+    text-align: center;
+    padding: 2em;
+}
+main .resultado .mensaje_encontrado {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    padding: 2em;
+}
+main .resultado .mensaje_encontrado h3 {
+    font-weight: 400;
+    font-size: 1.5em;
+}
+main .resultado .mensaje_encontrado button {
+    margin-top: 2em;
+    margin-bottom: 2em;
+}
+main .resultado .no_encontrado  img {
+    width: 100%;
+}
+main .resultado .mensaje_encontrado, 
+main .resultado .no_encontrado {
+    padding: 2em;
+    width: 100%;
+}
+
+/*activa o desactiva pantalla secundaria*/
+main .resultado .mensaje_encontrado .hidden {
+    display: none;
+} 
+
+main .buttons {
+    display: flex;
+    flex-direction: row;
+    gap: 1em;
+}
+
+main .button {
+    padding: .75em;
+    width: 100%;
+    border-radius: 1em;
+    border: 2px solid var(--Dark-Blue);
+    transition: border-color 250ms, background-color 250ms;
+}
+main .button:hover {
+    cursor: pointer;
+}
+main .button.button-primary {
+    background-color: var(--Dark-Blue);
+    color: var(--White);
+    font-weight: 500;
+}
+main .button.button-primary:hover {
+    background-color: var(--Blue-ligth);
+
+}
+
+main .button.button-secondary {
+    background-color: var(--Transparente);
+    color: var(--Dark-Blue);
+    font-weight: 500;
+}
+
+main .button.button-secondary:hover {
+    background-color: var(--Blue-ligth);
+}
+
+main .bottom small {
+    font-weight: 500;
+    color: var(--Medium-Gray);
+    display: flex;
+    align-items: end;
+}
+
+main .bottom small img {
+    padding-right: 0.25em;
+}
+
+
+
+@media screen and (max-width: 1440px) {
+    main .input_mensaje {
+        width: 50vw;
+    }
+    main .resultado_mensaje {
+        width: 40vw;
+    }        
+}
+
+@media screen and (max-width: 1023px) {
+    main {
+        flex-direction: column;
+    }
+
+    main .logo,
+    main .input_mensaje,
+    main .resultado_mensaje {
+        width: 100%;
+    }
+    main .logo {
+        justify-content: flex-start;        
+    }
+    main .logo img {
+        padding: 2em;
+    }
+    main .input_mensaje {
+        padding-top: 5vh;
+    }
+    main .input_mensaje .mensaje_contenedor {
+        width: 100%;
+        padding: 2em;
+    }    
+    main .input_mensaje .mensaje_contenedor textarea {
+        height: 50vh;
+    }
+    main .resultado_mensaje .resultado {
+        width: 100%;
+        margin: 2em;
+        height: auto;        
+    }
+    main .resultado_mensaje .resultado img {
+        display: none;
+    }
+    main .resultado_mensaje .resultado .mensaje {
+        max-height: 65vh;        
+    }
+    main .resultado_mensaje .resultado .button {
+        margin-bottom: 0;
+    }
+}
+@media screen and (max-width: 768px) {
+    main .buttons {
+        flex-direction: column;
+    }
+    
+}

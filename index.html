@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Encriptador</title>
+    <link rel="stylesheet" href="normalize.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,100..900&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <main>
+        <div class="logo">
+            <img src="/img/logo.svg" alt="Logo Alura">
+        </div>        
+        <div class="input_mensaje">
+            <div class="mensaje_contenedor">
+                <textarea name="" id="ingreso-texto" placeholder="Ingrese el texto aqui"></textarea>
+                <div class="bottom">
+                    <small> <img src="./img/alerta.svg" alt="">Solo letras minúsculas y sin acentos</small>
+                    <div class="buttons">
+                        <button class="button button-primary">Encriptar</button>
+                        <button class="button button-secondary">Desencriptar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="resultado_mensaje">
+            <div class="resultado">
+                <div class="no_encontrado">
+                    <img src="/img/imagen.svg" alt="Imagen Ilustrativa" class="imagen">
+                    <h2>Ningún mensaje fue encontrado</h2>
+                    <p>Ingresa el texto que desees encriptar o desencriptar.</p>
+                </div>
+                <div class="mensaje_encontrado hidden">
+                    <div class="mensaje">
+                        <h3>
+                        </h3>
+                    </div>                    
+                    <button class="button button-secondary hidden">Copiar</button>
+                </div>
+            </div>
+
+        </div>
+
+    </main>
+    <script src="./encriptador.js"></script>
+    
+</body>
+</html>
