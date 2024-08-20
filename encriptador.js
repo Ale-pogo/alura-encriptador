@@ -1,11 +1,14 @@
 document.addEventListener("DOMContentLoaded", () => {
   const textarea = document.getElementById("ingreso-texto");
-  const muneco = document.querySelector(".no_encontrado");
-  const mensajeEncontrado = document.querySelector(".mensaje_encontrado");
+  const imagen = document.querySelector(".no-encontrado");
+  const mensajeEncontrado = document.querySelector(".encontrado");
   const resultadotext = document.querySelector(".mensaje h3");
-  const buttonencrip = document.querySelector(".button-primary");
-  const buttondesencrip = document.querySelector(".button-secondary");
-  const buttoncopiar = document.querySelector(".mensaje_encontrado .button-secondary");
+  const buttonencrip = document.querySelector(".btn-uno");
+  const buttondesencrip = document.querySelector(".btn-dos");
+  const buttoncopiar = document.querySelector(".encontrado .btn-dos");
+  
+  // RegEx para permitir solo letras y espacios
+  const regex = /^[a-z\s]*$/;
 
   const llaves = [
     ["e", "enter"],
@@ -34,42 +37,51 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   function mostrarResultado(mensaje) {
-    muneco.classList.add("hidden");
+    imagen.classList.add("hidden");
     mensajeEncontrado.classList.remove("hidden");
     resultadotext.textContent = mensaje;
     buttoncopiar.classList.remove("hidden");
   }
 
-  // Encriptar
+  // Validación en tiempo real del texto ingresado
+  textarea.addEventListener("input", () => {
+    textarea.value = textarea.value.toLowerCase().replace(/[^a-z\s]/g, "");
+  });
+
+  // Encriptar con conversión automática a minúsculas
   buttonencrip.addEventListener("click", (e) => {
     e.preventDefault();
     const mensaje = textarea.value.toLowerCase(); // Convierte a minúsculas automáticamente
-    const mensajeEncriptado = encriptarMensaje(mensaje);
-    mostrarResultado(mensajeEncriptado);
+    
+    if (regex.test(mensaje)) {
+      const mensajeEncriptado = encriptarMensaje(mensaje);
+      mostrarResultado(mensajeEncriptado);
+    } else {
+      alert("Por favor, ingresa solo letras minúsculas sin acentos.");
+    }
   });
 
-  // Desencriptar
+  // Desencriptar con conversión automática a minúsculas
   buttondesencrip.addEventListener("click", (e) => {
     e.preventDefault();
     const mensaje = textarea.value.toLowerCase(); // Convierte a minúsculas automáticamente
-    const mensajeDesencriptado = desencriptarMensaje(mensaje);
-    mostrarResultado(mensajeDesencriptado);
+
+    if (regex.test(mensaje)) {
+      const mensajeDesencriptado = desencriptarMensaje(mensaje);
+      mostrarResultado(mensajeDesencriptado);
+    } else {
+      alert("Por favor, ingresa solo letras minúsculas sin acentos.");
+    }
   });
 
-  // Limpiar pantalla / Copiar
+  // Copiar al portapapeles, limpiar textarea y restaurar la imagen original
   buttoncopiar.addEventListener("click", () => {
     const textoCopiado = resultadotext.textContent;
     navigator.clipboard.writeText(textoCopiado).then(() => {
       alert("Texto copiado al portapapeles");
-      limpiarPantalla();
+      textarea.value = ""; // Limpia el textarea
+      imagen.classList.remove("hidden"); // Muestra la imagen
+      mensajeEncontrado.classList.add("hidden"); // Oculta el mensaje
     });
   });
-
-  function limpiarPantalla() {
-    textarea.value = ""; // Limpiar el textarea
-    resultadotext.textContent = ""; // Limpiar el mensaje de resultado
-    mensajeEncontrado.classList.add("hidden"); // Ocultar el resultado
-    buttoncopiar.classList.add("hidden"); // Ocultar el botón de copiar
-    muneco.classList.remove("hidden"); // Mostrar la imagen y el mensaje inicial
-  }
 });

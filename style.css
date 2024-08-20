@@ -30,17 +30,17 @@ main .logo {
 main .logo img {
     width: 7em;
 }
-main .input_mensaje {
+main .texto {
     width: 60vw;
     padding-top: 12vh;
     display: flex;
     justify-content: center;    
 }
-main .input_mensaje .mensaje_contenedor {
+main .texto .contenedor-mensaje {
     width: 70%;
     
 }
-main .input_mensaje .mensaje_contenedor textarea {
+main .texto .contenedor-mensaje textarea {
     width: 100%;
     resize: none;
     border: 0;
@@ -49,28 +49,29 @@ main .input_mensaje .mensaje_contenedor textarea {
     height: 70vh;
     padding: 0;
     color: var(--Dark-Blue);
+    
 }
-main .input_mensaje .mensaje_contenedor textarea::placeholder {
+main .texto .contenedor-mensaje textarea::placeholder {
     color: var(--Gree);
 }
 
-main .input_mensaje .mensaje_contenedor textarea:focus {
+main .texto .contenedor-mensaje textarea:focus {
     outline: none;    
 }
 
-main .input_mensaje .bottom {
+main .texto .botonera {
     display: flex;
     gap: 1em;
     flex-direction: column;
     padding-top: 1em;
 }
-main .resultado_mensaje {
+main .contenedor-resultado {
     width: 30vw;
     display: flex;
     justify-content: center;
     align-items: center;    
 }
-main .resultado_mensaje .resultado {
+main .contenedor-resultado .resultado {
     background-color: var(--White);
     height: 90vh;
     width: 75%;
@@ -84,44 +85,44 @@ main .resultado_mensaje .resultado {
     display: none !important;
 }
 
-main .resultado_mensaje .resultado .mensaje {
+main .contenedor-resultado .resultado .mensaje {
     overflow: auto;
     margin-top: 2em;      
 }
-main .resultado .no_encontrado {
+main .resultado .no-encontrado {
     text-align: center;
     padding: 2em;
 }
-main .resultado .mensaje_encontrado {
+main .resultado .encontrado {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     height: 100%;
     padding: 2em;
 }
-main .resultado .mensaje_encontrado h3 {
+main .resultado .encontrado h3 {
     font-weight: 400;
     font-size: 1.5em;
 }
-main .resultado .mensaje_encontrado button {
+main .resultado .encontrado button {
     margin-top: 2em;
     margin-bottom: 2em;
 }
-main .resultado .no_encontrado  img {
+main .resultado .no-encontrado  img {
     width: 100%;
 }
-main .resultado .mensaje_encontrado, 
-main .resultado .no_encontrado {
+main .resultado .encontrado, 
+main .resultado .no-encontrado {
     padding: 2em;
     width: 100%;
 }
 
 /*activa o desactiva pantalla secundaria*/
-main .resultado .mensaje_encontrado .hidden {
+/* main .resultado .encontrado .hidden {
     display: none;
-} 
+}  */
 
-main .buttons {
+main .botones {
     display: flex;
     flex-direction: row;
     gap: 1em;
@@ -137,44 +138,44 @@ main .button {
 main .button:hover {
     cursor: pointer;
 }
-main .button.button-primary {
+main .button.btn-uno {
     background-color: var(--Dark-Blue);
     color: var(--White);
     font-weight: 500;
 }
-main .button.button-primary:hover {
+main .button.btn-uno:hover {
     background-color: var(--Blue-ligth);
 
 }
 
-main .button.button-secondary {
+main .button.btn-dos {
     background-color: var(--Transparente);
     color: var(--Dark-Blue);
     font-weight: 500;
 }
 
-main .button.button-secondary:hover {
+main .button.btn-dos:hover {
     background-color: var(--Blue-ligth);
 }
 
-main .bottom small {
+main .botonera small {
     font-weight: 500;
     color: var(--Medium-Gray);
     display: flex;
     align-items: end;
 }
 
-main .bottom small img {
+main .botonera small img {
     padding-right: 0.25em;
 }
 
 
 
 @media screen and (max-width: 1440px) {
-    main .input_mensaje {
+    main .texto {
         width: 50vw;
     }
-    main .resultado_mensaje {
+    main .contenedor-resultado {
         width: 40vw;
     }        
 }
@@ -185,8 +186,8 @@ main .bottom small img {
     }
 
     main .logo,
-    main .input_mensaje,
-    main .resultado_mensaje {
+    main .texto,
+    main .contenedor-resultado {
         width: 100%;
     }
     main .logo {
@@ -195,33 +196,33 @@ main .bottom small img {
     main .logo img {
         padding: 2em;
     }
-    main .input_mensaje {
+    main .texto {
         padding-top: 5vh;
     }
-    main .input_mensaje .mensaje_contenedor {
+    main .texto .contenedor-mensaje {
         width: 100%;
         padding: 2em;
     }    
-    main .input_mensaje .mensaje_contenedor textarea {
+    main .texto .contenedor-mensaje textarea {
         height: 50vh;
     }
-    main .resultado_mensaje .resultado {
+    main .contenedor-resultado .resultado {
         width: 100%;
         margin: 2em;
         height: auto;        
     }
-    main .resultado_mensaje .resultado img {
+    main .contenedor-resultado .resultado img {
         display: none;
     }
-    main .resultado_mensaje .resultado .mensaje {
+    main .contenedor-resultado .resultado .mensaje {
         max-height: 65vh;        
     }
-    main .resultado_mensaje .resultado .button {
+    main .contenedor-resultado .resultado .button {
         margin-bottom: 0;
     }
 }
 @media screen and (max-width: 768px) {
-    main .buttons {
+    main .botones {
         flex-direction: column;
     }
     
