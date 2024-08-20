@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const buttondesencrip = document.querySelector(".btn-dos");
   const buttoncopiar = document.querySelector(".encontrado .btn-dos");
   
-  // RegEx para permitir solo letras y espacios
+  // permite solo letras y espacios
   const regex = /^[a-z\s]*$/;
 
   const llaves = [
@@ -74,7 +74,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
-  // Copiar al portapapeles, limpiar textarea y restaurar la imagen original
+  // copia, limpiar y restaurar 
   buttoncopiar.addEventListener("click", () => {
     const textoCopiado = resultadotext.textContent;
     navigator.clipboard.writeText(textoCopiado).then(() => {
