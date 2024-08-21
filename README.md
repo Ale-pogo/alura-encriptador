@@ -32,4 +32,4 @@ Las sustituciones son las siguientes:
 - JavaScript
 
 // Observacion //
-Si el texto es copiado de otro lugar y pegado para encriptarlo, el encriptador quita las mayúsculas, símbolos y caracteres especiales, por lo que las palabras que contengan mayúsculas quedaran cortadas (esto no pude resolverlo).
+Si el texto es copiado de otro lugar y pegado para encriptarlo, el encriptador quita las letras que tienen acentos, símbolos y caracteres especiales, por lo que las palabras que contengan acentos y caracteres especiales quedaran cortadas (esto no pude resolverlo).
