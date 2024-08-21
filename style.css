@@ -116,12 +116,6 @@ main .resultado .no-encontrado {
     padding: 2em;
     width: 100%;
 }
-
-/*activa o desactiva pantalla secundaria*/
-/* main .resultado .encontrado .hidden {
-    display: none;
-}  */
-
 main .botones {
     display: flex;
     flex-direction: row;
