@@ -87,11 +87,21 @@ main .contenedor-resultado .resultado {
 
 main .contenedor-resultado .resultado .mensaje {
     overflow: auto;
-    margin-top: 2em;      
+    margin-top: 2em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%; /* O un tamaño específico */
+    height: 95%; /* Ajusta según sea necesario */
+    padding: 10px;
+    box-sizing: border-box;
+    margin-top: 2em;   
+          
 }
 main .resultado .no-encontrado {
     text-align: center;
     padding: 2em;
+    
 }
 main .resultado .encontrado {
     display: flex;
@@ -102,11 +112,17 @@ main .resultado .encontrado {
 }
 main .resultado .encontrado h3 {
     font-weight: 400;
-    font-size: 1.5em;
-}
+    font-size: calc(16px + 1vw); /* Ajusta el tamaño del texto dinámicamente */
+    text-align: center; /* Centra el texto horizontalmente */
+    word-wrap: break-word; /* Asegura que las palabras largas se rompan */
+    overflow-wrap: break-word;
+    width: 100%; /* Asegura que el texto ocupe todo el ancho disponible */
+    
+} 
 main .resultado .encontrado button {
     margin-top: 2em;
     margin-bottom: 2em;
+    
 }
 main .resultado .no-encontrado  img {
     width: 100%;
@@ -115,6 +131,8 @@ main .resultado .encontrado,
 main .resultado .no-encontrado {
     padding: 2em;
     width: 100%;
+    
+    
 }
 main .botones {
     display: flex;
@@ -162,7 +180,7 @@ main .botonera small {
 main .botonera small img {
     padding-right: 0.25em;
 }
-
+ 
 
 
 @media screen and (max-width: 1440px) {
