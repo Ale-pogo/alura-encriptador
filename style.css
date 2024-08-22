@@ -31,13 +31,13 @@ main .logo img {
     width: 7em;
 }
 main .texto {
-    width: 60vw;
+    width: 56vw;
     padding-top: 12vh;
     display: flex;
     justify-content: center;    
 }
 main .texto .contenedor-mensaje {
-    width: 70%;
+    width: 75%;
     
 }
 main .texto .contenedor-mensaje textarea {
@@ -63,7 +63,7 @@ main .texto .botonera {
     padding-top: 1em;
 }
 main .contenedor-resultado {
-    width: 30vw;
+    width: 36vw;
     display: flex;
     justify-content: center;
     align-items: center;    
@@ -92,7 +92,7 @@ main .contenedor-resultado .resultado .mensaje {
     height: 95%; 
     padding: 10px;
     box-sizing: border-box;
-    margin-top: 2em;             
+    margin-top: 2em;                
 }
 main .resultado .no-encontrado {
     text-align: center;
@@ -108,6 +108,8 @@ main .resultado .encontrado {
 }
 main .resultado .encontrado h3 {
     font-weight: 400;
+    text-align: left;
+    vertical-align: top;
     font-size: calc(16px + 1vw); /* Ajusta el tamaño del texto dinámicamente */
     text-align: center;
     word-wrap: break-word; /* Asegura que las palabras largas se rompan */
@@ -167,11 +169,12 @@ main .botonera small {
 main .botonera small img {
     padding-right: 0.25em;
 }
- 
+
 
 
 
 @media screen and (max-width: 1440px) {
+
     main .texto {
         width: 50vw;
     }
@@ -225,5 +228,8 @@ main .botonera small img {
     main .botones {
         flex-direction: column;
     }
-    
+    main .contenedor-resultado {
+        width: calc(100% - 8vh);
+        margin: auto;       
+    }
 }
